@@ -59,11 +59,8 @@ export default class HomePage extends Component {
   _renderContent = ({route}) => {
     switch (route.key) {
       case '1':
-        return (
-          <View style={styles.page}>
-            <MonthlyView/>
-          </View>
-        );
+        return <MonthlyView/>;
+
       /*return <CustomCalendar
        scrollEnabled={true}
        showControls={true}

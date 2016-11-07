@@ -1,12 +1,13 @@
 import {combineReducers} from 'redux'
 import testReducer from './testReducer'
+import entries from './entries'
 import loginFormReducer from './loginFormReducer'
-import {reducer as formReducer} from 'redux-form'
+
 
 const sleepDiary = combineReducers({
   testReducer: testReducer,
   login: loginFormReducer,
-  form: formReducer, // <-- redux-form
+  entries: entries
 });
 
 export default sleepDiary;
