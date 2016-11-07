@@ -1,57 +1,42 @@
 'use strict'
 
 import React from 'react';
-import { Field, reduxForm, formValueSelector } from 'redux-form';
 import { TextInput, View, TouchableHighlight, Text } from 'react-native';
-import { connect } from 'react-redux';
+import styles from '../styles';
 
-class LoginForm extends React.Component {
+var t = require('tcomb-form-native');
+var Form = t.form.Form;
 
-  handeSubmit(email, password){ alert(`email: ${email} and password: ${password}`)};
+var User = t.struct({
+  email: t.String,
+  password: t.String,
+});
+var options = {}; // optional rendering options (see documentation)
 
+export default class LoginForm extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
   render() {
-
     return (
-      <View>
-        <Field
-          name="email"
-          component={TextInput}
-          placeholder="Email"
+      <View style={styles.container}>
+        <Form
+          ref="form"
+          type={User}
+          value={ this.props.login }
+          options={options}
         />
-        <TextInput
-          style={{height: 40}}
-          placeholder="Type here to translate!"
-          onChangeText={(text) => this.setState({text})}
-        />
-        <Field
-          name="password"
-          component={TextInput}
-          placeholder="Password"
-          secureTextEntry={true}
-
-        />
-        <TouchableHighlight onPress={() => this.handeSubmit(this.props.email, this.props.password)}>
-          <Text>Submit</Text>
+        <TouchableHighlight style={styles.button} onPress={this.submitLoginForm.bind(this)} underlayColor='#99d9f4'>
+          <Text style={styles.buttonText}>Save</Text>
         </TouchableHighlight>
       </View>
     );
   }
-}
 
-
-LoginForm = reduxForm({
-  form: 'loginForm'
-})(LoginForm);
-
-const selector = formValueSelector('loginForm');
-
-function mapStateToProps(state){
-  return {
-    email: selector(state, 'email'),
-    password: selector(state, 'password'),
+  submitLoginForm() {
+    this.props.submitLoginForm(this.refs.form.getValue());
   }
 }
 
-LoginForm = connect(mapStateToProps)(LoginForm);
 
-export default LoginForm;

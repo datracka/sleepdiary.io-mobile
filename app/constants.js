@@ -1,11 +1,5 @@
-import { applyMiddleware, createStore } from "redux"
-
-import logger from "redux-logger"
-import thunk from "redux-thunk"
-import promise from "redux-promise-middleware"
-
-import reducer from "./reducers"
-
-const middleware = applyMiddleware(promise(), thunk, logger())
-
-export default createStore(reducer, middleware)
+//Sign In User
+export const LOGIN_USER = 'LOGIN_USER';
+export const LOGIN_USER_PENDING = 'LOGIN_USER_PENDING';
+export const LOGIN_USER_REJECTED = 'LOGIN_USER_REJECTED';
+export const LOGIN_USER_FULFILLED = 'LOGIN_USER_FULFILLED';

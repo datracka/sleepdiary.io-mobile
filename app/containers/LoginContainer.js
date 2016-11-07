@@ -1,31 +1,26 @@
 import {connect} from 'react-redux'
 import LoginForm from '../components/LoginForm';
-import { reduxForm, formValueSelector } from 'redux-form';
+import {login} from '../actions'
 
-
-let reduxLoginForm = reduxForm({
-  form: 'loginForm'
-})(LoginForm);
-
-const selector = formValueSelector('loginForm');
-
-function mapStateToProps(state){
+const mapStateToProps = (state) => {
   return {
-    email: selector(state, 'email'),
-    password: selector(state, 'password'),
+    login: {
+      email: state.login.email,
+      password: state.login.password
+    }
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {
 
+  return {
+    submitLoginForm: (values) => {
+        dispatch(login(values))
     }
+  }
 }
-
-
-
 
 export default LoginContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(reduxLoginForm)
+)(LoginForm)

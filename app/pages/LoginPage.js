@@ -18,7 +18,7 @@ export default class LoginPage extends Component {
 
     render() {
       return (
-          <LoginForm></LoginForm>
+          <LoginContainer></LoginContainer>
       )
     }
 }
