@@ -11,7 +11,6 @@ import LoginPage from './LoginPage';
 export default class SplashPage extends Component {
 
   componentWillMount() {
-    console.log("Splash page!");
     setTimeout(() => {
       this.props.toRoute(
         {

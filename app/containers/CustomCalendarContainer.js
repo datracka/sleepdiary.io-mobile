@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
-import MonthlyView from '../components/MonthlyView';
-import {AsyncStorage} from 'react-native';
-import {fetchEntries} from '../actions'
+import CustomCalendar from '../components/CustomCalendar';
+import {fetchEntries} from '../actions';
+
 
 const mapStateToProps = (state) => ({
   entries: state.entries,
@@ -13,16 +13,16 @@ const mapDispatchToProps = (dispatch) => {
     fetchEntries: () => {
       dispatch(fetchEntries())
         .then((response) => {
-          console.log("then?", response);
+
         })
         .catch((response)=> {
-          console.log("catched! ", response);
+
         });
     }
   }
 }
 
-export default LoginContainer = connect(
+export default CustomCalendarContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(MonthlyView)
+)(CustomCalendar)

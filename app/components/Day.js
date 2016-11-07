@@ -6,7 +6,7 @@ import {
   View,
 } from 'react-native';
 
-import styles from '../styles/calendarStyles';
+import styles from '../styles';
 
 export default class Day extends Component {
   static defaultProps = {

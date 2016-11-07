@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 
 import {TabViewAnimated, TabBarTop, TabBar} from 'react-native-tab-view';
-import MonthlyView from '../components/MonhtlyView';
+import MonthlyViewContainer from '../containers/MonthlyViewContainer';
 import styles from '../styles'
 
 import Footer from '../components/Footer';
@@ -59,28 +59,7 @@ export default class HomePage extends Component {
   _renderContent = ({route}) => {
     switch (route.key) {
       case '1':
-        return <MonthlyView/>;
-
-      /*return <CustomCalendar
-       scrollEnabled={true}
-       showControls={true}
-       titleFormat={'MMMM YYYY'}
-       dayHeadings={['S', 'M', 'T', 'W', 'T', 'F', 'S']}
-       monthNames={Array}
-       prevButtonText={'Prev'}
-       nextButtonText={'Next'}
-       onDateSelect={(date) => this.onDateSelect(date)}
-       onTouchPrev={this.onTouchPrev}
-       onTouchNext={this.onTouchNext}
-       onSwipePrev={this.onSwipePrev}
-       onSwipeNext={this.onSwipeNext}
-       eventDates={['2015-07-01']}
-       today={'2016-16-05'}
-       startDate={'2015-08-01'}
-       selectedDate={'2015-08-15'}
-       customStyle={{day: {fontSize: 15, textAlign: 'center'}}}
-       weekStart={1}
-       />;*/
+        return <MonthlyViewContainer/>;
       case '2':
         return <View style={[styles.page, {backgroundColor: '#673ab7'}]}/>;
       case '3':

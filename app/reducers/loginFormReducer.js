@@ -29,7 +29,6 @@ export default function loginFormReducer(state = initialState, action) {
       };
       break;
     case LOGIN_USER_FULFILLED:
-      console.log(action.payload.data);
       return {
         ...state,
         fetching: false,
