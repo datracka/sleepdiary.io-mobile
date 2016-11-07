@@ -18,7 +18,7 @@ export default class LoginPage extends Component {
 
     render() {
       return (
-          <LoginContainer></LoginContainer>
+          <LoginContainer toRoute={this.props.toRoute}></LoginContainer>
       )
     }
 }

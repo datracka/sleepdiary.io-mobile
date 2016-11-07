@@ -7,7 +7,8 @@ const initialState = {
   fetching: false,
   fetched: false,
   error: null,
-  message: null
+  message: null,
+  data: null
 }
 
 export default function loginFormReducer(state = initialState, action) {
@@ -19,8 +20,22 @@ export default function loginFormReducer(state = initialState, action) {
       };
       break;
     case LOGIN_USER_REJECTED:
+      return {
+        ...state,
+        fetching: false,
+        fetched: true,
+        error: action.payload.data,
+        message: action.payload.message
+      };
       break;
     case LOGIN_USER_FULFILLED:
+      console.log(action.payload.data);
+      return {
+        ...state,
+        fetching: false,
+        fetched: true,
+        data: action.payload.data
+      };
       break;
     default:
       return state;
