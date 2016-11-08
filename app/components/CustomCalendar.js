@@ -158,7 +158,7 @@ export default class CustomCalendar extends Component {
   }
 
   /* returns an array day indexed with the encounters matchings */
-  lookForMatchingsWithGivenEntries() {
+  createKeyValueArrayForEntries() {
     let a = [];
     this.props.entries.map((entry) => {
       let m = moment(entry.date);
@@ -195,7 +195,7 @@ export default class CustomCalendar extends Component {
       : null;
 
 
-    matchingEntries = this.lookForMatchingsWithGivenEntries(argMonthDaysCount);
+    matchingEntries = this.createKeyValueArrayForEntries(argMonthDaysCount);
     do {
       const dayIndex = renderIndex - offset;
       const isoWeekday = (renderIndex + weekStart) % 7;
