@@ -127,6 +127,15 @@ const styles = StyleSheet.create({
     height: 28,
     borderRadius: 14,
   },
+  greenDayCircle: {
+    backgroundColor: 'green',
+  },
+  yellowDayCircle: {
+    backgroundColor: 'yellow',
+  },
+  redDayCircle: {
+    backgroundColor: 'red',
+  },
   currentDayCircle: {
     backgroundColor: 'red',
   },

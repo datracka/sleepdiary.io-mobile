@@ -29,7 +29,7 @@ export function fetchEntries() {
   axios.defaults.headers.common['Authorization'] = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJTbGVlcCBEaWFyeSIsImF1ZCI6Ind3dy5zbGVlcGRpYXJ5LmlvIiwic3ViIjoxLCJSb2xlIjpbInVzZXIiXSwiaWF0IjoxNDc4MTc3NTI3LjcyNDc1MjJ9.G7E6QCG789ece21fp8xifsqoJxezO9GAkb0BGAcN2OE';
   let request = axios({
     method: 'get',
-    url: `${ROOT_URL}/calendar/year/2016`,
+    url: `${ROOT_URL}/calendar/year/2016/month/11`,
     headers: [
     ]
   });

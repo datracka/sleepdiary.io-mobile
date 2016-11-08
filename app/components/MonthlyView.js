@@ -4,7 +4,6 @@ import {
   Text
 } from 'react-native';
 
-import styles from '../styles'
 import CustomCalendarContainer from '../containers/CustomCalendarContainer'
 export default class TestComponent extends Component {
 
@@ -12,14 +11,23 @@ export default class TestComponent extends Component {
     super(props);
   }
 
+  componentWillMount() {
+    this.props.fetchEntries();
+  }
+
+  onDateSelect(date) {
+    console.log(date);
+  }
+
   render() {
+    console.log(this.props.entries.entries);
     return (
       <CustomCalendarContainer
-       scrollEnabled={true}
+       scrollEnabled={false}
        showControls={true}
        titleFormat={'MMMM YYYY'}
        dayHeadings={['S', 'M', 'T', 'W', 'T', 'F', 'S']}
-       monthNames={Array}
+       monthNames={[]}
        prevButtonText={'Prev'}
        nextButtonText={'Next'}
        onDateSelect={(date) => this.onDateSelect(date)}
@@ -28,11 +36,11 @@ export default class TestComponent extends Component {
        onSwipePrev={this.onSwipePrev}
        onSwipeNext={this.onSwipeNext}
        eventDates={['2015-07-01']}
-       today={'2016-16-05'}
-       startDate={'2015-08-01'}
-       selectedDate={'2015-08-15'}
+       startDate={'2016-11-01'}
+       selectedDate={'2016-11-15'}
        customStyle={{day: {fontSize: 15, textAlign: 'center'}}}
        weekStart={1}
+       entries={this.props.entries.entries}
        />
     )
   }
