@@ -2,4 +2,4 @@
 
 import sleepdiaryioMobile from './app'
 
-sleepdiaryioMobile('ios')
+sleepdiaryioMobile('ios');

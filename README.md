@@ -2,6 +2,10 @@
 
 Mobile app based in React Native
 
+##How to run it
+
+``` $> react-native run-ios```
+
 ##resources: 
 
 ####calendar
