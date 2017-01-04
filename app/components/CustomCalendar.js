@@ -70,6 +70,7 @@ export default class CustomCalendar extends Component {
   };
 
   componentDidMount() {
+    console.log('hi!');
     // fixes initial scrolling bug on Android
     setTimeout(() => this.scrollToItem(VIEW_INDEX), 0)
   }
@@ -200,7 +201,7 @@ export default class CustomCalendar extends Component {
       const dayIndex = renderIndex - offset;
       const isoWeekday = (renderIndex + weekStart) % 7;
       if (dayIndex >= 0 && dayIndex < argMonthDaysCount) {
-        console.log("dayIndex", dayIndex, matchingEntries[dayIndex])
+        //console.log("dayIndex", dayIndex, matchingEntries[dayIndex]);
         days.push((
           <Day
             startOfMonth={startOfArgMonthMoment}

@@ -105,7 +105,7 @@ export default class Day extends Component {
       sleepingIndicators,
       calendarView
     } = this.props;
-    console.log(sleepingIndicators);
+    //console.log(sleepingIndicators);
     return filler
       ? (
       <TouchableWithoutFeedback>

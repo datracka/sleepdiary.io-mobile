@@ -16,11 +16,11 @@ export default class TestComponent extends Component {
   }
 
   onDateSelect(date) {
-    console.log(date);
+    //console.log(date);
   }
 
   render() {
-    console.log(this.props.entries.entries);
+    //console.log(this.props.entries.entries);
     return (
       <CustomCalendarContainer
        scrollEnabled={false}

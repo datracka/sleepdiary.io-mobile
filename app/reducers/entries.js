@@ -73,7 +73,7 @@ export default function entries(state = initialState, action) {
 }
 
 function handleAddEntry(state, action) {
-  console.log("handleAddEntry", state.type);
+  //console.log("handleAddEntry", state.type);
   switch (action.type) {
     case ADD_ENTRY_PENDING:
       break;
@@ -89,7 +89,7 @@ function handleAddEntry(state, action) {
 }
 
 function handleEntryToServer(state, action) {
-  console.log("handleAddEntry", state.type);
+  //console.log("handleAddEntry", state.type);
   switch(action.type) {
     case ADD_ENTRY_TO_SERVER_PENDING:
       break;
