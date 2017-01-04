@@ -70,7 +70,6 @@ export default class CustomCalendar extends Component {
   };
 
   componentDidMount() {
-    console.log('hi!');
     // fixes initial scrolling bug on Android
     setTimeout(() => this.scrollToItem(VIEW_INDEX), 0)
   }
