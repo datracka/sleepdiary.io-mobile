@@ -34,7 +34,7 @@ export default function entries(state = initialState, action) {
         fetched: false,
         error: null,
         message: null
-      }
+      };
       break;
     case FETCH_ENTRIES_FULFILLED:
 
@@ -45,7 +45,7 @@ export default function entries(state = initialState, action) {
         fetched: true,
         error: null,
         message: null
-      }
+      };
       break;
     case FETCH_ENTRIES_REJECTED:
       return {
@@ -55,7 +55,7 @@ export default function entries(state = initialState, action) {
         fetched: true,
         error: action.payload.data,
         message: action.payload.message
-      }
+      };
       break;
     case ADD_ENTRY:
       state.entries = new List(state.entries)

@@ -3,6 +3,7 @@ import {
   View,
   Text
 } from 'react-native';
+import moment from 'moment';
 
 import CustomCalendarContainer from '../containers/CustomCalendarContainer'
 export default class TestComponent extends Component {
@@ -12,6 +13,7 @@ export default class TestComponent extends Component {
   }
 
   componentWillMount() {
+    console.log('componentWillMount');
     this.props.fetchEntries();
   }
 
@@ -20,7 +22,16 @@ export default class TestComponent extends Component {
   }
 
   render() {
-    //console.log(this.props.entries.entries);
+    let matchingEntries = [];
+
+    this.props.entries.entries.map((entry) => {
+      let m = moment(entry.date);
+      matchingEntries[m.format('D')] = {
+        sleepingQuality: entry.sleepingQuality,
+        tirednessFeeling: entry.tirednessFeeling
+      }
+    });
+
     return (
       <CustomCalendarContainer
        scrollEnabled={false}
@@ -40,7 +51,7 @@ export default class TestComponent extends Component {
        selectedDate={'2016-11-15'}
        customStyle={{day: {fontSize: 15, textAlign: 'center'}}}
        weekStart={1}
-       entries={this.props.entries.entries}
+       entries={matchingEntries}
        />
     )
   }

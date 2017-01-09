@@ -26,10 +26,10 @@ export function login(values) {
 export function fetchEntries() {
 
   //hot fix for overriding validation!
-  axios.defaults.headers.common['Authorization'] = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJTbGVlcCBEaWFyeSIsImF1ZCI6Ind3dy5zbGVlcGRpYXJ5LmlvIiwic3ViIjoxLCJSb2xlIjpbInVzZXIiXSwiaWF0IjoxNDc4MTc3NTI3LjcyNDc1MjJ9.G7E6QCG789ece21fp8xifsqoJxezO9GAkb0BGAcN2OE';
+  axios.defaults.headers.common['Authorization'] = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ3d3cuc2xlZXBkaWFyeS5pbyIsIlJvbGUiOlsidXNlciJdLCJpc3MiOiJTbGVlcCBEaWFyeSIsImlhdCI6MTQ4MzU1MjAwOS45MTgxNTkyLCJzdWIiOjJ9.Dur6hcSlqiTeNJTN957EzCtcMJlijeqNwXRgjBv5Xhc';
   let request = axios({
     method: 'get',
-    url: `${ROOT_URL}/calendar/year/2016/month/11`,
+    url: `${ROOT_URL}/calendar/year/2016/month/12`,
     headers: [
     ]
   });
@@ -47,7 +47,7 @@ export function addEntry(entry) {
     dispatch(addEntryOptimistic(entry));
     //dispatch(addEntryToServerPending(entry));
     //hot fix for overriding validation!
-    axios.defaults.headers.common['Authorization'] = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJTbGVlcCBEaWFyeSIsImF1ZCI6Ind3dy5zbGVlcGRpYXJ5LmlvIiwic3ViIjoxLCJSb2xlIjpbInVzZXIiXSwiaWF0IjoxNDc4MTc3NTI3LjcyNDc1MjJ9.G7E6QCG789ece21fp8xifsqoJxezO9GAkb0BGAcN2OE';
+    axios.defaults.headers.common['Authorization'] = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ3d3cuc2xlZXBkaWFyeS5pbyIsIlJvbGUiOlsidXNlciJdLCJpc3MiOiJTbGVlcCBEaWFyeSIsImlhdCI6MTQ4MzU1MjAwOS45MTgxNTkyLCJzdWIiOjJ9.Dur6hcSlqiTeNJTN957EzCtcMJlijeqNwXRgjBv5Xhc';
     return axios({
       method: 'post',
       url: `${ROOT_URL}/calendar`,
